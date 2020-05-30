@@ -14,9 +14,7 @@
             </div>
             <nav class="nav">
                 <?php
-                foreach ($anchors as $item => [$anchor, $name]){
-                    echo ("<a href='$anchor' class='nav__a'> $name </a>");
-                }
+                    require ($_SERVER['DOCUMENT_ROOT'] . "/travel/includes/anchors.inc.php");
                 ?>
             </nav>
         </header>
@@ -38,9 +36,9 @@
         
         <div class="side-panel">
             <ul>
-                <li><a href="#main"> Главная</a></li>
-                <li><a href="#about"> О нас </a></li>
-                <li><a href="#contact"> Контакты </a></li>
+                <?php
+                require ($_SERVER['DOCUMENT_ROOT'] . "/travel/includes/anchors.inc.php");
+                ?>
             </ul>
         </div>
         
@@ -69,9 +67,7 @@
 
         <div class="info">
             <?php
-                for($i = 0; $i < count($parag); $i++){
-                    echo "<p class='info__p'>$parag[$i]</p>";
-                }
+            require $_SERVER['DOCUMENT_ROOT'] . "/travel/includes/parag.inc.php";
             ?>
         </div>
 
@@ -81,34 +77,18 @@
         <div class="reasons" id="about">
             <ul class="reasons__ul">
                 <?php
-                for ($i=0; $i < count($reasons); $i++) {
-                    echo " <li class='reasons__li'> {$reasons[$i][0]}  {$reasons[$i][1]}</li>";
-                }
+                require $_SERVER['DOCUMENT_ROOT'] . "/travel/includes/reasons.inc.php";
                 ?>
             </ul>
         </div>
         <div class="cards">
             <?php
-            foreach ($cards as $country => [$image, $header, $paragraph]){
-                echo "<div class='card'>
-                <div class='card__img_wrap'>
-                    <img src=$image alt='' class='card__img'>
-                </div>
-                <h5 class='card__h5'>$header</h5>
-                <div class='card__line'></div>
-                <p class='card__p'> $paragraph</p>
-            </div>";
-            }
+            require $_SERVER['DOCUMENT_ROOT'] . "/travel/includes/cards.inc.php";
             ?>
         </div>
         <div class="wrap-panel">
             <?php
-            for ($i=0; $i < count($faq); $i++) {
-                echo "<div class='wrapper-faq'>
-                    <div class='faq-panel'><h5>{$faq[$i][0]}</h5></div>
-                    <div class='faq-answer'><p>{$faq[$i][1]}</p></div>
-                </div>";
-            }
+            require $_SERVER['DOCUMENT_ROOT'] . "/travel/includes/faq.inc.php";
             ?>
         </div>
         <?php
