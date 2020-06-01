@@ -1,5 +1,5 @@
 <?php
-    require "config/info.config.php";
+require $_SERVER['DOCUMENT_ROOT'] . "/travel/config/info.config.php";
     $title = 'Сайт про путешествия!';
     $comma = implode(", ", $keywords);
     $keywords = $comma;

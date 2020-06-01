@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Хост: 127.0.0.1
--- Время создания: Май 30 2020 г., 21:44
+-- Время создания: Июн 01 2020 г., 16:50
 -- Версия сервера: 10.4.11-MariaDB
 -- Версия PHP: 7.4.6
 
@@ -29,8 +29,8 @@ SET time_zone = "+00:00";
 
 CREATE TABLE `reasons` (
   `id` int(11) NOT NULL,
-  `emoji` varchar(10) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
-  `reason` text NOT NULL,
+  `emoji` varchar(10) CHARACTER SET utf8mb4 COLLATE utf8mb4_bin NOT NULL,
+  `reason` text CHARACTER SET utf8mb4 COLLATE utf8mb4_bin NOT NULL,
   `ordera` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 

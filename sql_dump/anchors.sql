@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Хост: 127.0.0.1
--- Время создания: Май 30 2020 г., 21:42
+-- Время создания: Июн 01 2020 г., 16:49
 -- Версия сервера: 10.4.11-MariaDB
 -- Версия PHP: 7.4.6
 
@@ -61,7 +61,7 @@ ALTER TABLE `anchors`
 -- AUTO_INCREMENT для таблицы `anchors`
 --
 ALTER TABLE `anchors`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
