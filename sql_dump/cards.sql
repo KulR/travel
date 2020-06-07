@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Хост: 127.0.0.1
--- Время создания: Июн 01 2020 г., 16:50
+-- Время создания: Июн 07 2020 г., 14:43
 -- Версия сервера: 10.4.11-MariaDB
 -- Версия PHP: 7.4.6
 
@@ -29,10 +29,9 @@ SET time_zone = "+00:00";
 
 CREATE TABLE `cards` (
   `id` int(11) NOT NULL,
-  `country` varchar(50) NOT NULL,
   `img_path` varchar(100) NOT NULL,
   `alt` varchar(100) NOT NULL,
-  `title` varchar(100) NOT NULL,
+  `header` varchar(100) NOT NULL,
   `content` text NOT NULL,
   `ordera` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
@@ -41,13 +40,14 @@ CREATE TABLE `cards` (
 -- Дамп данных таблицы `cards`
 --
 
-INSERT INTO `cards` (`id`, `country`, `img_path`, `alt`, `title`, `content`, `ordera`) VALUES
-(1, 'Russia', 'img/moscow.png', 'kreml', 'Путешествия по России', 'Балалайки, матрешки, Кремль', 1),
-(2, 'England', 'img/big-ben.png', 'big-ben', 'Путешествия по Англии', 'Разные страны, разные культуры.', 5),
-(3, 'Africa', 'img/pyramids.png', 'pyramids', 'Путешествия по Африке', 'Классные сафари, львы и много папуасов.', 8),
-(4, 'NorthAmerica', 'img/south-america.png', 'south-america', 'Путешествия по Северной Америке.', 'Конечно мы проедем всю Америку и тут будет еще немного контента.', 12),
-(5, 'SouthAmerica', 'img/north-america.png', 'north-america', 'Путешествия по Южной Америке.', 'Южная Америка нас ждет, там классно, бананы и землетрясения.', 16),
-(6, 'Australia', 'img/kangaroo.png', 'kangaroo', 'Путешествия по Австралии.', 'Австралия, кенгуру, летающих пауков там нет! Или есть. Приезжайте и проверьте!', 20);
+INSERT INTO `cards` (`id`, `img_path`, `alt`, `header`, `content`, `ordera`) VALUES
+(1, 'img/moscow.png', 'kreml', 'Путешествия по России', 'Балалайки, матрешки, Кремль', 1),
+(2, 'img/big-ben.png', 'big-ben', 'Путешествия по Англии', 'Разные страны, разные культуры.', 5),
+(3, 'img/pyramids.png', 'pyramids', 'Путешествия по Африке', 'Классные сафари, львы и много папуасов.', 8),
+(4, 'img/south-america.png', 'south-america', 'Путешествия по Северной Америке.', 'Конечно мы проедем всю Америку и тут будет еще немного контента.', 12),
+(5, 'img/north-america.png', 'north-america', 'Путешествия по Южной Америке.', 'Южная Америка нас ждет, там классно, бананы и землетрясения.', 16),
+(6, 'img/kangaroo.png', 'kangaroo', 'Путешествия по Австралии.', 'Австралия, кенгуру, летающих пауков там нет! Или есть. Приезжайте и проверьте!', 20),
+(10, 'img/upload/5edc0d294b423jap2.jpg', 'суши, аниме, гейши', 'Путешествия по Японии', 'Япония - это классная страна.', 23);
 
 --
 -- Индексы сохранённых таблиц
@@ -67,7 +67,7 @@ ALTER TABLE `cards`
 -- AUTO_INCREMENT для таблицы `cards`
 --
 ALTER TABLE `cards`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

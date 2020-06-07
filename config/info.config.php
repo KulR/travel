@@ -71,14 +71,15 @@ if($result = $connect-> query("SELECT * FROM reasons ORDER BY ordera")){
 }
 
 if($result = $connect-> query("SELECT * FROM cards ORDER BY ordera")){
-    $cards = ['country'=>[], 'img_path'=>[], 'alt'=>[], 'title'=>[], 'content'=>[]];
+    $cards = ['id'=>[], 'img_path'=>[], 'alt'=>[], 'header'=>[], 'content'=>[], 'ordera'=>[]];
 
     while ($row = $result->fetch_assoc()){
-        array_push($cards['country'], $row['country']);
+        array_push($cards['id'], $row['id']);
         array_push($cards['img_path'], $row['img_path']);
         array_push($cards['alt'], $row['alt']);
-        array_push($cards['title'], $row['title']);
+        array_push($cards['header'], $row['header']);
         array_push($cards['content'], $row['content']);
+        array_push($cards['ordera'], $row['ordera']);
     }
 } else{
     echo("произошла ошибка запроса");

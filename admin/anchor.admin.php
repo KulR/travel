@@ -9,9 +9,9 @@ require $_SERVER['DOCUMENT_ROOT'] . "/travel/config/info.config.php";
         <h3 class="title has-text-white"> Редактирование ссылок </h3>
         <hr class="login-hr">
         <figure class="image is-128x128">
-            <img src="../img/moscow.png" alt="" class="is-rounded">
+            <img src="../img/big-ben.png" alt="" class="is-rounded">
         </figure>
-        <form action="form/form_a.php" method="get" class="has-background-light">
+        <form action="form/form_a.php" method="get" class="has-background-primary">
             <div class="field">
                 <label class="radio label">
                     <input type="radio" name="choose" value="ins" required>
