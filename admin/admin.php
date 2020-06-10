@@ -1,13 +1,48 @@
 <?php
+session_start();
+    $title_info = "Главная страница Админки";
     require $_SERVER['DOCUMENT_ROOT'] . "/travel/admin/admin_head.admin.php";
 
     ?>
 
 <body>
 
+
+<nav class="navbar" role="navigation" aria-label="main navigation">
+    <div class="navbar-brand">
+        <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false">
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+        </a>
+    </div>
+    <div class="navbar-menu">
+        <div class="navbar-end">
+            <div class="navbar-item">
+                <div class="buttons">
+                    <?php
+                    if($_SESSION['login']){
+                        echo "<a class='button is-primary' href='reg/admin_logout.php'>
+                        <strong>Выход</strong>
+                    </a>";
+                    } else {
+                        echo "<a class='button is-primary' href='reg/admin_reg.php'>
+                        <strong>Регистрация</strong>
+                    </a>
+                    <a class='button is-light' href='reg/admin_auth.php'>
+                        Авторизация
+                    </a>";
+                    }
+                    ?>
+                </div>
+            </div>
+        </div>
+    </div>
+</nav>
+
 <section class="has-background-link columns">
     <div class="column is-full has-text-white">
-        <h1 class="label is-size-2 has-text-centered">Hello user!</h1>
+        <?php echo "<h1 class='label is-size-2 has-text-centered'>Hello {$_SESSION['login']}</h1>" ?>
         <h3 class="is-size-3 has-text-centered">Добро пожаловать в CMS систему</h3>
     </div>
 </section>

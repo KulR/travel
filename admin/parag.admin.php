@@ -1,4 +1,5 @@
 <?php
+$title_info = "Админка параграфа";
 
 require $_SERVER['DOCUMENT_ROOT'] . "/travel/admin/admin_head.admin.php";
 require $_SERVER['DOCUMENT_ROOT'] . "/travel/config/info.config.php";

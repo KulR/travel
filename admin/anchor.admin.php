@@ -1,9 +1,11 @@
 <?php
+$title_info = "Админка ссылки";
 
 require $_SERVER['DOCUMENT_ROOT'] . "/travel/admin/admin_head.admin.php";
 require $_SERVER['DOCUMENT_ROOT'] . "/travel/config/info.config.php";
 ?>
 <body>
+
 <section class="columns has-background-info is-centered">
     <div class="column is-half has-text-centered">
         <h3 class="title has-text-white"> Редактирование ссылок </h3>
