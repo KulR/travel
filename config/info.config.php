@@ -1,6 +1,9 @@
 <?php
 require $_SERVER['DOCUMENT_ROOT'] . "/travel/config/bd.config.php";
 
+
+$home = "http://{$_SERVER['HTTP_HOST']}" . "/travel/admin/admin.php";
+
 $back = "<p> <a href=\"javascript: history.back()\"> Вернуться назад </a> </p>";
 
 $back_timer = "<script>

@@ -1,6 +1,8 @@
 <?php
 require $_SERVER['DOCUMENT_ROOT'] . "/travel/config/info.config.php";
 require $_SERVER['DOCUMENT_ROOT'] . "/travel/classes/Db.php";
+
+
 $login = $_POST['name'];
 $email = $_POST['email'];
 $password = $_POST['password'];
@@ -12,7 +14,7 @@ $email = trim($email);
 
 $pattern_login = '/\w{3,100}/';
 $pattern_mail = '/\w+@\w+\.\w+/';
-$pattern_password = '/\w{7,100}/';
+$pattern_password = '/\w{3,100}/';
 
 
 if(preg_match($pattern_login, $login) &&
@@ -27,15 +29,25 @@ if(preg_match($pattern_login, $login) &&
 
     while($row = $result -> fetch_assoc()){
         echo "На ресурсе уже есть пользователь с такой почтой";
+        echo " $back $back_timer";
         die();
     }
-
-    $sql_create_user = "INSERT INTO users VALUES (NULL, '$email', '$login', '$password', 'false')";
+    $date_now = date('Y-m-d H:i:s');
+    $sql_create_user = "INSERT INTO users VALUES (NULL, '$email', '$login', '$password', 'false', '$date_now', 'user')";
 
     if(Db::getdbconnnect() -> query($sql_create_user)){
         echo "<h1> Пользователь успешно зарегестрирован на этом ресурсе </h1>
-                <h5> Нужно подтвердить свою почту, проверьте почтовый ящик</h5>";
-        echo " $back $back_timer";
+                <h5> Нужно подтвердить свою почту, проверьте почтовый ящик </h5>";
+
+        $result = Db::getdbconnnect() -> query($sql_check);
+        while($row = $result -> fetch_assoc()){
+            $current_id = $row['id'];
+        }
+
+        $activate_link = "http://" . $_SERVER['HTTP_HOST'] . "/travel/admin/form/activate.php?id=" . $current_id;
+        $content = "<a href='$activate_link'> Активировать аккаунт </a>";
+        echo "$content";
+//        echo " $back $back_timer";
     } else{
         echo "Error: {$sql_create_user}" . DB::getdbconnnect()->error;
         Db::getdbconnnect()->close();
@@ -46,7 +58,7 @@ if(preg_match($pattern_login, $login) &&
         echo "Возможно ваш логин слишком короткий";
     }
     if(!preg_match($pattern_mail, $email)){
-        echo "Вы указали невалидную почтуфф";
+        echo "Вы указали невалидную почту";
     }
     if(!preg_match($pattern_password, $password)){
         echo "Ваш пароль не соответствует правилам сайта";

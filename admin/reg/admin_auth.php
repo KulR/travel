@@ -10,14 +10,14 @@ require $_SERVER['DOCUMENT_ROOT'] . "/travel/config/info.config.php";
         <div class="field">
             <label for="name" class="label has-text-centered">Введите ваш логин</label>
             <div class="control">
-                <input type="text" class="input is-medium" placeholder="имя" name="name" id="name">
+                <input type="text" class="input is-medium" placeholder="имя" name="name" id="name" autocomplete="true">
             </div>
         </div>
 
         <div class="field">
             <label for="password" class="label">Введите пароль</label>
             <div class="control">
-                <input type="password" class="input is-medium" placeholder="пароль" name="password" id="password">
+                <input type="password" class="input is-medium" placeholder="пароль" name="password" id="password" autocomplete="true">
             </div>
         </div>
 
